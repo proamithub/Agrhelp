@@ -1,0 +1,281 @@
+﻿@using HelpRepo
+@model List<HelpModel.DTO.Services.ServicesDTO>
+@{
+    ViewData["Title"] = "New";
+}
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                @* <div class="col-sm-6">
+                <h1 class="card-title">Choose Collage </h1>
+                </div>*@<!-- /.col -->
+
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-xl-12">
+
+                    @*//////////////////////*@
+                    
+                    <div class="card">
+                        <form>
+                        <div class="card-header">
+                            <h3 class="card-title">Services List</h3>
+
+                            @* ................................ *@
+
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col-sm-2"><label>Start Date:</label></div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+
+                                            <div class="input-group datepic" id="datepic" data-target-input="nearest">
+                                                    <input type="text" id="fromDate" name="fromDate" value="@ViewBag.fromDate" class="form-control datetimepicker-input" data-target="#datepic" />
+                                                <div class="input-group-append" data-target="#datepic" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+
+                                    <div class="col-sm-2"> <label>End Date:</label></div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+
+                                            <div class="input-group enddatepic" id="enddatepic" data-target-input="nearest">
+                                                    <input type="text" id="date" name="date" value="@ViewBag.Date" class="form-control datetimepicker-input" data-target="#enddatepic" />
+                                                <div class="input-group-append" data-target="#enddatepic" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                        
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+
+                                                <div class="input-group"  >
+                                                    <input type="text" id="SearchText" name="SearchText" class="form-control " placeholder="Type your ApplicationNo/Ticket" value="@ViewBag.SearchText">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="col-sm-1"><button type="submit" class="btn btn-outline-danger">Search</button></div>
+                                </div>
+                            </div>
+                               
+
+                            @* ............................... *@
+                        </div>
+                    </form>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example3" class="table table-bordered table-striped " style="font-size:small">
+                                <thead class="table-info">
+                                    <tr>
+
+                                        <th>SrNo.</th>
+                                        <th>ApplicationNo/Ticket</th>
+                                        <th>Name</th>
+                                        <th>Roll/Enrollment</th>
+                                        <th>Details</th>
+                                        <th>Course/CreatedDate</th>
+                                        <th>Amount/PaidDate</th>
+                                        <th>Remark</th>
+                                        <th>AdminRemark</th>
+
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        if (Model.Count() > 0)
+                                        {
+                                            int i = 1;
+                                            foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>@i</td>
+                                                    <td>@item.ApplicationNo<br />
+                                                        
+
+                                                        @if (string.IsNullOrEmpty(item.TicketID))
+                                                        {
+                                                            <button type="button" onclick="ServiceAdd('@item.ApplicationNo.Trim()')" class="btn btn-success  btn-sm ">Add </button>
+                                                        }
+                                                        else
+                                                        {
+
+
+                                                            <b> <a onclick="ServiceOpen('@item.TicketID.Trim()')" class="text-danger " href="javascript:void()" style="cursor:pointer !important">@item.TicketID </a></b>
+                                                        }
+                                                    </td>
+                                                    <td><b>@item.Name</b></td>
+                                                    <td>
+                                                        <b>@item.RollNo</b>  <br /> @item.EnrollmentNo
+
+                                                    </td>
+                                                    <td>@item.Email <br />@item.Mobile</td>
+                                                    <td><b>@item.CourseName</b><br />@item.CreatedDate</td>
+                                                    <td><b>@item.FeeAmount /-</b> <br />@item.TransactionDate.Value.ToString("dd-MMM-yyyy")</td>
+                                                    <td>@item.Remarks</td>
+                                                    <td>@Html.Raw(item.AdminRemarks)</td>
+
+                                                   
+                                                </tr>
+                                                i++;
+                                            }
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    Data Not Found!
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+                @*////////////////////*@
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        
+        //Date picker
+        $('#datepic').datetimepicker({
+            // format: 'L'
+            format: 'DD/MMM/yyyy'
+        });
+
+        $('#enddatepic').datetimepicker({
+             // format: 'L'
+            format: 'DD/MMM/yyyy'
+        });
+
+    });
+</script>
+<script>
+
+    
+
+    function ServiceOpen(tid) {
+        flag = true;
+      //  alert(tid)
+        
+        if (flag) {
+            var obj = {
+                TicketID: tid,
+            };
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: '@Url.Action("CheckTicket", "Home", new { area = "" })',
+                data: JSON.stringify(obj),
+                dataType: "json",
+                beforeSend: function () {
+                    // setting a timeout
+                    $('#btnserwait').show();
+                    $('#btnser').hide();
+
+                },
+                success: function (resp) {
+                    $('#TicketBox1').val("");
+                    // alert(resp.data)
+                    if (resp.data == "success") {
+                        //  alert("/Home/Tickets/?Ticket=" + resp.res)
+                        // window.location.href = "/Admin/Dashboard/Tickets/?Ticket=" + resp.res + "&&t=1";
+                        var lin = "/Admin/Dashboard/Tickets/?Ticket=" + resp.res + "&&t=1";
+                        window.open(lin, '_blank');
+
+                    }
+                    else {
+                        Swal.fire(resp.data)
+
+                    }
+                },
+                error: function (result) {
+                    alert('Service call failed: ' + result.status + ' Type :' + result.statusText);
+                },
+                complete: function () {
+                    setTimeout(function () {
+                        $('#btnserwait').hide();
+                        $('#btnser').show();
+
+                    }, 0);
+                },
+            });
+
+        };
+    }
+
+
+    function ServiceAdd(Ap) {
+         // alert(pid)
+         if (confirm("Click OK to proceed")) {
+            
+                
+                   var formData = new FormData();
+                formData.append("ApplicationNo", Ap);
+
+                 $.ajax({
+                     type: "POST",
+                     url: '@Url.Action("GenerateServicesTicket", "Dashboard", new { Area = "admin" })',
+                    data: formData,
+            dataType: 'json',
+            contentType: false,
+            processData: false,
+                     dataType: "json",
+
+                     success: function (response) {
+                       
+                         if (response.data == "success") {
+                             alert("Save Successfully!")
+                         } 
+                         else {
+                             alert("Error! Try Again Later ")
+                         }
+
+                         location.reload();
+
+                     },
+                     error: function (error) {
+
+                     }
+                 });
+             
+         } else {
+
+         }
+
+     }
+</script>

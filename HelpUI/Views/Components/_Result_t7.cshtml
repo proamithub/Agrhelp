@@ -1,0 +1,534 @@
+﻿@model StudentMasterDTO
+@{
+    var we = "";
+    var imgurl = Model.ImageURL + Model.MPATH;
+
+}
+<div style="">
+    <div class="mt-2">
+        <center>
+            <a href="javascript:void(0)" onclick="return PrintPanel('prnttb')" class="btn btn-primary btn-md text-white "><i class="fa fa-print"></i> Print</a>
+            <a href="/" class="btn btn-warning btn-md text-white "><i class="fa fa-arrow-left"></i> Back</a>
+            @* <a asp-action="ResultDownload_t1" asp-controller="Home" asp-route-data="@Model.EncrptedRoll" class="btn btn-primary btn-sm text-white "> Download</a> *@
+        </center>
+
+    </div>
+    <div id="Cpytxt">
+        <div class="page " style="   width: 21cm;
+    min-height: 29.7cm;
+    padding: 1cm;
+    margin: 10px auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);">
+            <div class="subpage" style=" color: #000; font-family: Arial; font-size: 14px">
+                <div id="prnttb">
+                    <table style="width: 100% ;  border-collapse: collapse;" class="table ">
+
+                        <tr style="padding:0px;border: 1px solid #000 !important;">
+
+                            <td style="padding:0px;border: 1px solid #000 !important;">
+                                <table style="width: 100%;border:none !important">
+                                    <tr style="padding:0px;">
+                                        <td style="width:2%;vertical-align:top;text-align:center; padding:5px;margin-left:1px;  border:none !important">
+
+
+                                            @{
+
+                                                // var p = "/logo_header.png";
+                                                var p = "https://admission.agrauniv.online/logo_header.png";
+                                            }
+                                            <img src="@p" style="width: 75px; height: 75px;margin-top:2px" alt="" />
+                                        </td>
+                                        <td style="width:75%;text-align:center;vertical-align:top;padding:5px;margin-left:1px; line-height:25px;font-weight:bold;font-size:16px; border:none !important">
+                                            DR. BHIMRAO AMBEDKAR UNIVERSITY, AGRA <br />
+
+                                            @Model.HELD_IN<br />
+                                            STATEMENT OF MARKS <br />
+
+                                        </td>
+                                        <td style="float:right;font-weight:bold;font-size:12px ;border:none !important">
+                                            <img src="@String.Format("data:image/png;base64,{0}",
+                                Convert.ToBase64String(Model.qcore))" height="80" width="100" />
+
+
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+
+                            </td>
+                        </tr>
+                        <tr style="padding:0px;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;">
+
+                            <td style="border-bottom:none !important; padding:0px">
+                                <div class="watermark" style="position: absolute;font-size: 3em;
+        width: 550px;
+        height: 550px;
+        left: 500px;
+        top: 25%;
+text-align:center;
+        background-repeat: no-repeat;
+        background-image: url('http://result.agrauniv.online/image/DHRAU_Watermark.png');
+        z-index: 9999;
+        opacity: 0.075;"></div>
+                                <table style="width: 100%;  border-collapse: collapse;">
+                                    <tbody>
+                                        <tr style="padding:0px;">
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> COURSE NAME </th>
+                                            <td colspan="3" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : <strong>@Model.CourseName</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr style="padding:0px">
+
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px">SEMESTER</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : @Model.DisplaySemester
+                                            </td>
+
+                                            <td rowspan="5" style="border:none !important" width="110" height="150">
+                                                <center>
+                                                    <div style="font-weight:700 ;font-size:10px">
+                                                        <b>  CATEGORY :</b>
+                                                        <b> @Model.EXAM_TYPE</b>
+                                                    </div>
+                                                    @{
+                                                        var img = Model.ImageURL + Model.MPATH;
+                                                    }
+                                                    <img style="border:1px solid #000" id="Image1" src="@img" alt="" width="110" height="140" />
+                                                </center>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px">ROLL NO </th>
+
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                :<strong> @Model.ROLL_NO</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> ENROLLMENT No</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : @Model.ENROLLMENT_NO
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> STUDENT'S NAME</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : <strong>@Model.NAME</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> FATHER'S NAME</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : @Model.FNAME
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> MOTHER'S NAME</th>
+                                            <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : @Model.MNAME
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+
+                                            <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> COLLEGE NAME</th>
+                                            <td colspan="3" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                                : <strong>(@Model.CCODE) - @Model.CNAME</strong>
+                                            </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr style="text-align:center ;border-collapse: collapse;border-left: 1px solid #000 !important;">
+
+                            <td style="padding:0px !important ;border:none !important">
+                                <table style="width: 100%;  border-collapse: collapse;">
+
+                                    <tr style="font-size:12px">
+                                        <th style="border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;width:100%;text-align:left;vertical-align:top; padding:5px;margin-left:1px;">Name Of Subject</th>
+                                        <th colspan="3" style="border: 1px solid #000 !important;width:25%;vertical-align:top; padding:5px;margin-left:1px;">Maximum Marks </th>
+                                        <th style="border: 1px solid #000 !important;width:10%;vertical-align:top; padding:5px;margin-left:1px;">
+                                            Minimum
+                                            Marks
+                                        </th>
+                                        <th colspan="3" style="border: 1px solid #000 !important;width:25%;vertical-align:top; padding:5px;margin-left:1px;">Marks Obtained</th>
+
+
+                                    </tr>
+                                    <tr style="text-align:center; font-size:12px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;font-weight:bold">
+                                        <td style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;padding:5px">
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            Sem
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            Mid
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            Total
+                                        </td>
+
+                                        <td style="border: 1px solid #000 !important;">
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            Sem
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            Mid
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            Total
+                                        </td>
+
+
+                                    </tr>
+                                    @if (Model.MarksList.Count > 0)
+                                    {
+                                        var d = Model.CSPList.Select(m => new { m.SUBJECT_NAME }).Distinct();
+                                        foreach (var s in d)
+                                        {
+                                            @* foreach (var item in Model.CSPList.Where(x => x.SUBJECT_NAME == s.SUBJECT_NAME))
+                                    { *@
+
+                                            int P1 = 0; int P2 = 0;
+                                            int TP1 = 0; int TP2 = 0;
+                                            int maxp1 = 0; int maxp2 = 0;
+
+                                            var pcode = Model.CSPList.Where(x => x.SUBJECT_NAME == s.SUBJECT_NAME && x.PNAME == "Paper-I").FirstOrDefault();
+                                            <tr style="text-align:center; font-size:12px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;font-weight:bold">
+                                                <td style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;padding:5px">
+
+                                                    @pcode.SUBJECT_NAME
+                                                </td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+
+                                            </tr>
+                                            if (Model.MarksList.Any(x => x.PCODE == pcode.PCODE) == true)
+                                            {
+                                                var PCODE_N = pcode.PCODE;
+
+                                                <tr style="text-align:center; font-size:12px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;font-weight:bold">
+                                                    <td style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;padding:5px">
+                                                        @*   @if (!string.IsNullOrEmpty(PCODE_N))
+                                            {
+                                            <span> [@PCODE_N] : </span>
+                                            } *@
+                                                        @pcode.PNAME_R
+                                                    </td>
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+                                                        <center>  @pcode.THEORY_MAX</center>
+                                                    </td>
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+                                                        <center>  @pcode.SESSIONAL_MAX</center>
+
+                                                    </td>
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+
+                                                        <center>
+                                                            @{
+                                                                maxp1 = (int)pcode.THEORY_MAX + (int)pcode.SESSIONAL_MAX;
+                                                            }@maxp1
+                                                        </center>
+
+                                                    </td>
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+                                                    </td>
+
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+                                                        @{
+                                                            var obt1 = Model.CSPList.Where(x => x.SUBJECT_NAME == s.SUBJECT_NAME && x.PTYPE == "T" && x.PNAME == "Paper-I").Take(1).Select(x => x.PCODE).FirstOrDefault();
+                                                            if (obt1 != null)
+                                                            {
+
+                                                                int o11 = Convert.ToInt32(Model.MarksList.Where(x => x.PCODE == obt1.ToString()).Select(x => x.MARKS_OBT).FirstOrDefault());
+                                                                <center>  @o11</center>
+                                                            }
+                                                        }
+
+                                                    </td>
+
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+                                                        @{
+                                                            var cvT3 = Model.CSPList.Where(x => x.SUBJECT_NAME == s.SUBJECT_NAME && x.PTYPE == "T" && x.PNAME == "Paper-I").Take(1).Select(x => x.PCODE).FirstOrDefault();
+                                                            if (cvT3 != null)
+                                                            {
+
+                                                               int s12 = Convert.ToInt32(Model.MarksList.Where(x => x.PCODE == cvT3.ToString()).Select(x => x.SES_OBT).FirstOrDefault());
+                                                                <center>  @s12</center>
+                                                            }
+                                                        }
+
+
+                                                    </td>
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+
+                                                        <center>
+                                                            @{
+                                                                var t2 = Model.CSPList.Where(x => x.SUBJECT_NAME == s.SUBJECT_NAME && x.PTYPE == "T" && x.PNAME == "Paper-I").Take(1).Select(x => x.PCODE).FirstOrDefault();
+                                                                if (t2 != null)
+                                                                {
+
+                                                                    P1 = Convert.ToInt32(Model.MarksList.Where(x => x.PCODE == t2.ToString()).Select(x => x.PAPER_TOT_MARKS_OBT).FirstOrDefault());
+                                                                    <center>  @P1</center>
+                                                                }
+                                                            }
+
+
+                                                        </center>
+
+                                                    </td>
+
+
+
+                                                </tr>
+
+                                            }
+
+
+                                            @* -------------------paper II---------------- *@
+                                            var pcode2 = Model.CSPList.Where(x => x.SUBJECT_NAME == s.SUBJECT_NAME && x.PNAME == "Paper-II").FirstOrDefault();
+                                            if (Model.MarksList.Any(x => x.PCODE == pcode2.PCODE) == true)
+                                            {
+                                                var PCODE_N = pcode2.PCODE;
+
+                                                <tr style="text-align:center; font-size:12px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;font-weight:bold">
+                                                    <td style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;padding:5px">
+                                                        @*   @if (!string.IsNullOrEmpty(PCODE_N))
+                                            {
+                                            <span> [@PCODE_N] : </span>
+                                            } *@
+                                                        @pcode2.PNAME_R
+                                                    </td>
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+                                                        <center>  @pcode2.THEORY_MAX</center>
+                                                    </td>
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+                                                        <center>  @pcode2.SESSIONAL_MAX</center>
+
+                                                    </td>
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+
+                                                        <center>
+                                                            @{
+                                                                maxp2 = (int)pcode2.THEORY_MAX + (int)pcode2.SESSIONAL_MAX;
+                                                            }@maxp2
+                                                        </center>
+
+                                                    </td>
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+                                                    </td>
+
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+                                                        @{
+                                                            var obt1 = Model.CSPList.Where(x => x.SUBJECT_NAME == s.SUBJECT_NAME && x.PTYPE == "T" && x.PNAME == "Paper-II").Take(1).Select(x => x.PCODE).FirstOrDefault();
+                                                            if (obt1 != null)
+                                                            {
+
+                                                                int o21 = Convert.ToInt32(Model.MarksList.Where(x => x.PCODE == obt1.ToString()).Select(x => x.MARKS_OBT).FirstOrDefault());
+                                                                <center>  @o21</center>
+                                                            }
+                                                        }
+
+                                                    </td>
+
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+                                                        @{
+                                                            var cvT3 = Model.CSPList.Where(x => x.SUBJECT_NAME == s.SUBJECT_NAME && x.PTYPE == "T" && x.PNAME == "Paper-II").Take(1).Select(x => x.PCODE).FirstOrDefault();
+                                                            if (cvT3 != null)
+                                                            {
+
+                                                              int  s22 = Convert.ToInt32(Model.MarksList.Where(x => x.PCODE == cvT3.ToString()).Select(x => x.SES_OBT).FirstOrDefault());
+                                                                <center>  @s22</center>
+                                                            }
+                                                        }
+
+
+                                                    </td>
+                                                    <td width="5%" style="border: 1px solid #000 !important;">
+
+                                                        <center>
+                                                            @{
+                                                                var t2 = Model.CSPList.Where(x => x.SUBJECT_NAME == s.SUBJECT_NAME && x.PTYPE == "T" && x.PNAME == "Paper-II").Take(1).Select(x => x.PCODE).FirstOrDefault();
+                                                                if (t2 != null)
+                                                                {
+
+                                                                    P2 = Convert.ToInt32(Model.MarksList.Where(x => x.PCODE == t2.ToString()).Select(x => x.PAPER_TOT_MARKS_OBT).FirstOrDefault());
+                                                                    <center>  @P2</center>
+                                                                }
+                                                            }
+
+
+                                                        </center>
+
+                                                    </td>
+
+
+                                                </tr>
+
+
+
+                                            }
+
+                                            @* /////////////Tot///////////////// *@
+                                            <tr style="text-align:center; font-size:12px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;font-weight:bold">
+                                                <td style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;padding:5px">
+
+                                                    <strong> TOTAL  </strong>
+                                                </td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                    @{
+                                                        int tp = maxp1 + maxp2;
+                                                    }
+                                                    @tp
+                                                </td>
+
+                                                <td style="border: 1px solid #000 !important;">
+                                                    20
+                                                </td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+                                                <td style="border: 1px solid #000 !important;">
+                                                </td>
+
+                                                <td style="border: 1px solid #000 !important;">
+
+                                                    @{
+                                                        int tpp = P1 + P2;
+                                                    }
+                                                    @tpp
+                                                </td>
+
+                                            </tr>
+                                        }
+                                    }
+                                    <tr style="text-align:center; font-size:12px;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;font-weight:bold">
+                                        <td style="text-align:left;font-weight:bold;border-right: 1px solid #000 !important;border-top: 1px solid #000 !important;border-bottom: 1px solid #000 !important;padding:5px">
+
+                                            <strong>GRAND TOTAL  </strong>
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            @Model.ResultList.Select(x => x.MAX_MARKS).FirstOrDefault()
+                                        </td>
+
+                                        <td style="border: 1px solid #000 !important;">
+                                            @Model.ResultList.Select(x => x.MIN_MARKS).FirstOrDefault()
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                        </td>
+
+                                        <td style="border: 1px solid #000 !important;">
+                                            @Model.ResultList.Select(x => x.MARKS_OBT).FirstOrDefault()
+                                           
+                                        </td>
+
+                                    </tr>
+
+
+                                   
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr style="font-size:12px">
+                            <td style="border-top:none !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                                <table style="width: 100%;border:none !important;">
+                                    <tr>
+                                        <td style="border:none !important ;text-align:left">
+                                            <p style="padding:0px;margin:0px">
+                                                RESULT :
+
+                                                <strong>
+                                                    @if (Model.ResultList.Select(x => x.RESULT).FirstOrDefault() != null)
+                                                    {
+                                                        @Model.ResultList.Select(x => x.RESULT).FirstOrDefault()
+                                                    }
+                                                    else
+                                                    {
+
+                                                    }
+                                                </strong>
+                                            </p>
+                                            <p style="padding:0px;margin:0px">
+                                                DATE OF RESULT DECLARATION : <strong>@Model.ResultList.Select(x=>x.RESULT_DECL_DATE).FirstOrDefault()</strong>
+
+                                            </p>
+                                            <p style="padding:0px;margin:0px">
+
+                                                <strong>  @Model.STD_Remarks</strong>
+                                            </p>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr style="margin:0px" />
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="border:none !important ;text-align:left">
+                                            <p style="padding:0px;margin:0px">
+                                                1. This statement is a computer generated document and no need of manual signature.
+                                            </p>
+                                            <p style="padding:0px;margin:0px">
+                                                2. In case of any discrepancy University record shall be final.
+                                            </p>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <div style="text-align:center;float:right">
+                                    <img src="https://resulttest.agrauniv.online/sign.jpeg" height="50" width="100" /><br />
+                                    Controller of Examinations
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>

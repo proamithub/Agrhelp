@@ -1,0 +1,366 @@
+﻿@model StudentMasterDTO
+@{
+    Layout = null;
+   
+}
+
+<div style="">
+    
+    <div class="page " id="Cpytxt" style="letter-spacing:1px;"   >
+        <div class="subpage" style=" height: 256mm;color: #000; font-family: Arial; font-size: 14px">
+            <table id="prnttb" style="width: 100% ;  border-collapse: collapse;" class="table ">
+
+                <tr style="padding:0px;border: 1px solid #000 !important;">
+
+                    <td style="padding:0px;border: 1px solid #000 !important;">
+                        <table style="width: 100%;border:none !important">
+                            <tr style="padding:0px;">
+                                <td style="width:2%;vertical-align:top;text-align:center; padding:5px;margin-left:1px;  border:none !important">
+
+
+                                    @{
+
+                                        // var p = "/logo_header.png";
+                                        var p = "https://admission.agrauniv.online/logo_header.png";
+                                    }
+                                    <img src="@p" style="width: 75px; height: 75px;margin-top:1px" alt="" />
+                                </td>
+                                <td style="width:75%;text-align:center;vertical-align:top;padding:5px;margin-left:1px; line-height:25px;font-weight:bold;font-size:16px; border:none !important">
+                                    DR. BHIMRAO AMBEDKAR UNIVERSITY, AGRA <br />
+                                    @Model.HELD_IN<br />
+                                    STATEMENT OF MARKS <br />
+
+                                </td>
+                                <td style="float:right;font-weight:bold;font-size:12px ;border:none !important">
+                                    <img src="@String.Format("data:image/png;base64,{0}",
+                                Convert.ToBase64String(Model.qcore))" height="80" width="100" />
+
+
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+                    </td>
+                </tr>
+                <tr style="padding:0px;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;">
+
+                    <td style="border-bottom:none !important; padding:0px">
+                        <div class="watermark" style="position: absolute;font-size: 3em;
+        width: 550px;
+        height: 550px;
+        left: 200px;
+        top: 12%;
+text-align:center;
+        background-repeat: no-repeat;
+        background-image: url('http://result.agrauniv.online/image/DHRAU_Watermark.png');
+        z-index: 9999;
+        opacity: 0.075;"></div>
+                        <table style="width: 100%;  border-collapse: collapse;">
+                            <tbody>
+                                <tr style="padding:0px;">
+                                    <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> COURSE NAME </th>
+                                    <td colspan="3" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                        : <strong>@Model.CourseName</strong>
+                                    </td>
+                                </tr>
+
+                                <tr style="padding:0px">
+
+                                    <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px">SEMESTER</th>
+                                    <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                        : @Model.DisplaySemester
+                                    </td>
+
+                                    <td rowspan="6" style="border:none !important" width="150" height="200">
+                                        <div style="font-size:10px">
+                                            <b>  CATEGORY :</b>
+                                            <b> @Model.EXAM_TYPE</b>
+                                        </div>
+                                        @{
+                                            var img = Model.ImageURL + Model.MPATH;
+                                        }
+                                        <img style="border:1px solid #000" id="Image1" src="@img" alt="" />
+
+
+                                    </td>
+
+                                </tr>
+                                <tr>
+
+                                    <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px">ROLL NO </th>
+
+                                    <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                        :<strong> @Model.ROLL_NO</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> ENROLLMENT No</th>
+                                    <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                        : @Model.ENROLLMENT_NO
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> STUDENT'S NAME</th>
+                                    <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                        : <strong>@Model.NAME</strong>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> FATHER'S NAME</th>
+                                    <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                        : @Model.FNAME
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> MOTHER'S NAME</th>
+                                    <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                        : @Model.MNAME
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+
+                                    <th style="border:none !important ;width:20%;vertical-align:top;text-align:left; font-size: 13px ; padding:5px"> COLLEGE NAME</th>
+                                    <td colspan="2" style="border:none !important ;width:60%;vertical-align:top;padding:5px;text-transform:uppercase">
+                                        : <strong>(@Model.CCODE) - @Model.CNAME</strong>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr style="text-align:center ;border-collapse: collapse;">
+
+                    <td style="padding:0px !important ;border:none !important">
+                        <table style="width: 100%;  border-collapse: collapse;">
+
+                            <tr>
+                                <th style="border: 1px solid #000 !important;width:40%;text-align:left;vertical-align:top; padding:5px;margin-left:1px;  font-size: 14px">Course Title</th>
+                                <th style="border: 1px solid #000 !important;width:20%;vertical-align:top; padding:5px;margin-left:1px;  font-size: 14px">Maximum Marks</th>
+                                <th style="border: 1px solid #000 !important;width:20%;vertical-align:top; padding:5px;margin-left:1px;  font-size: 14px">Minimum Marks</th>
+                                <th style="border: 1px solid #000 !important;width:20%;vertical-align:top; padding:5px;margin-left:1px;  font-size: 14px">Marks Obtained</th>
+
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #000 !important;width:10%;vertical-align:top;text-align:left ; padding:5px;margin-left:1px;  font-size: 14px"></td>
+                                <td style="border: 1px solid #000 !important;width:10%;vertical-align:top;text-align:left; padding:5px;margin-left:1px;  font-size: 14px">
+                                    <table style="border:none !important;width:100%">
+                                        <tr>
+                                            <th style="border:none !important">
+                                                Th.
+                                            </th>
+                                            <th style="border:none !important">
+                                                Int.
+                                            </th>
+                                            <th style="border:none !important">
+                                                Tot.
+                                            </th>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                                <td style="width:10%;vertical-align:top;text-align:left; padding:5px;margin-left:1px;  font-size: 14px;border: 1px solid #000 !important;">
+                                    <table style="border:none !important;width:100%">
+                                        <tr>
+                                            <th style="border:none !important">
+                                                Th.
+                                            </th>
+                                            <th style="border:none !important">
+                                                Int.
+                                            </th>
+                                            <th style="border:none !important">
+                                                Tot.
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width:10%;vertical-align:top;text-align:left; padding:5px;margin-left:1px;  font-size: 14px;border: 1px solid #000 !important;">
+                                    <table style="border:none !important;width:100%">
+                                        <tr>
+                                            <th style="border:none !important">
+                                                Th.
+                                            </th>
+                                            <th style="border:none !important">
+                                                Int.
+                                            </th>
+                                            <th style="border:none !important">
+                                                Tot.
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </td>
+
+                            </tr>
+                            @if (Model.MarksList.Count > 0)
+                            {
+                                foreach (var item in Model.MarksList)
+                                {
+
+
+                                    <tr style="font-size:12px;border: 1px solid #000 !important;">
+                                        <td style="text-align:left;font-weight:bold;border: 1px solid #000 !important;letter-spacing:1px;">
+                                            @if (!string.IsNullOrEmpty(item.PCODE_N))
+                                            {
+                                                <span> [@item.PCODE_N] : </span>
+                                            } @item.SUBJECT_NAME
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            <table style="border:none !important;width:100%">
+                                                <tr>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+
+                                                        @item.MaxExt
+
+                                                    </td>
+                                                    <td style="width:33%;text-align:left;border:none !important">
+                                                        @item.MaxInt
+                                                    </td>
+                                                    <td style="width:33%;text-align:left; border:none !important">
+                                                        @item.MaxTot
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            <table style="border:none !important;width:100%">
+                                                <tr>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                        @item.MinExt
+                                                    </td>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                        @item.MinInt
+                                                    </td>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                        @item.MinTot
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            <table style="border:none !important;width:100%">
+                                                <tr>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                        @item.MARKS_OBT
+                                                    </td>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                        @item.TOT_INT_SES_OBT
+                                                    </td>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                        @item.PAPER_TOT_MARKS_OBT
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+
+                            @if (Model.ResultList.Count > 0)
+                            {
+                                foreach (var item in Model.ResultList)
+                                {
+
+
+                                    <tr style="font-size:12px;border: 1px solid #000 !important;">
+                                        <td style="text-align:left;font-weight:bold;border: 1px solid #000 !important;">
+                                            <strong>Total </strong>
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            <table style="border:none !important;width:100%">
+                                                <tr>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                    </td>
+                                                    <td style="width:33%;text-align:left;border:none !important">
+                                                    </td>
+                                                    <td style="width:33%;text-align:left; border:none !important">
+                                                        <strong> @item.MAX_MARKS </strong>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            <table style="border:none !important;width:100%">
+                                                <tr>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                    </td>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                    </td>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                        <strong> @item.MIN_MARKS </strong>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="border: 1px solid #000 !important;">
+                                            <table style="border:none !important;width:100%">
+                                                <tr>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                    </td>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                    </td>
+                                                    <td style="width:33%; text-align:left;border:none !important">
+                                                        <strong>  @item.MARKS_OBT</strong>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+                        </table>
+                    </td>
+                </tr>
+                <tr style="font-size:12px">
+                    <td style="border-top:none !important;border-left: 1px solid #000 !important;border-right: 1px solid #000 !important;border-bottom: 1px solid #000 !important;">
+                        <table style="width: 100%;border:none !important;">
+                            <tr>
+                                <td style="border:none !important ;text-align:left">
+                                    <p style="padding-top:5px">
+                                        RESULT :
+
+                                        <strong>  @Model.ResultList.Select(x=>x.RESULT).FirstOrDefault()</strong>
+                                    </p>
+                                    <p>
+                                        DATE OF RESULT DECLARATION : <strong>@Model.ResultList.Select(x=>x.RESULT_DECL_DATE).FirstOrDefault()</strong>
+
+                                    </p>
+                                </td>
+
+                            </tr>
+                        </table>
+                        <hr style="margin:0px" />
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="border:none !important ;text-align:left">
+                                    <p style="padding-top:15px">
+                                        1. This statement is a computer generated document and no need of manual signature.
+                                    </p>
+                                    <p>
+                                        2. In case of any discrepancy University record shall be final.
+                                    </p>
+                                </td>
+                            </tr>
+
+                        </table>
+                        <div style="text-align:center;float:right">
+                            <img src="https://resulttest.agrauniv.online/sign.jpeg" height="50" width="100" /><br />
+                            Controller of Examinations
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

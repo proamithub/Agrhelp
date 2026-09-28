@@ -1,0 +1,129 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\vrs\\HelpDeskProj\\HelpUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3215465-EAC2-49F8-9CB8-4F6AEBD473BA}|HelpUI.csproj|d:\\vrs\\helpdeskproj\\helpui\\views\\home\\tickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3215465-EAC2-49F8-9CB8-4F6AEBD473BA}|HelpUI.csproj|solutionrelative:views\\home\\tickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3215465-EAC2-49F8-9CB8-4F6AEBD473BA}|HelpUI.csproj|d:\\vrs\\helpdeskproj\\helpui\\areas\\admin\\views\\dashboard\\tickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3215465-EAC2-49F8-9CB8-4F6AEBD473BA}|HelpUI.csproj|solutionrelative:areas\\admin\\views\\dashboard\\tickets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3215465-EAC2-49F8-9CB8-4F6AEBD473BA}|HelpUI.csproj|d:\\vrs\\helpdeskproj\\helpui\\views\\home\\newticket.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F3215465-EAC2-49F8-9CB8-4F6AEBD473BA}|HelpUI.csproj|solutionrelative:views\\home\\newticket.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3215465-EAC2-49F8-9CB8-4F6AEBD473BA}|HelpUI.csproj|d:\\vrs\\helpdeskproj\\helpui\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3215465-EAC2-49F8-9CB8-4F6AEBD473BA}|HelpUI.csproj|solutionrelative:areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3215465-EAC2-49F8-9CB8-4F6AEBD473BA}|HelpUI.csproj|d:\\vrs\\helpdeskproj\\helpui\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3215465-EAC2-49F8-9CB8-4F6AEBD473BA}|HelpUI.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tickets.cshtml",
+              "DocumentMoniker": "D:\\vrs\\HelpDeskProj\\HelpUI\\Areas\\Admin\\Views\\Dashboard\\Tickets.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Dashboard\\Tickets.cshtml",
+              "ToolTip": "D:\\vrs\\HelpDeskProj\\HelpUI\\Areas\\Admin\\Views\\Dashboard\\Tickets.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Dashboard\\Tickets.cshtml",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAqwIQCAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-25T08:00:15.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NewTicket.cshtml",
+              "DocumentMoniker": "D:\\vrs\\HelpDeskProj\\HelpUI\\Views\\Home\\NewTicket.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\NewTicket.cshtml",
+              "ToolTip": "D:\\vrs\\HelpDeskProj\\HelpUI\\Views\\Home\\NewTicket.cshtml",
+              "RelativeToolTip": "Views\\Home\\NewTicket.cshtml",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAqwIsBAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-25T07:59:49.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Tickets.cshtml",
+              "DocumentMoniker": "D:\\vrs\\HelpDeskProj\\HelpUI\\Views\\Home\\Tickets.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Tickets.cshtml",
+              "ToolTip": "D:\\vrs\\HelpDeskProj\\HelpUI\\Views\\Home\\Tickets.cshtml",
+              "RelativeToolTip": "Views\\Home\\Tickets.cshtml",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAqwHoBAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-25T07:57:53.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{99b8fa2f-ab90-4f57-9c32-949f146f1914}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "D:\\vrs\\HelpDeskProj\\HelpUI\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ToolTip": "D:\\vrs\\HelpDeskProj\\HelpUI\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAmwHwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T07:44:52.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\vrs\\HelpDeskProj\\HelpUI\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\vrs\\HelpDeskProj\\HelpUI\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAJwBAAAAAAAAAAAewEgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T07:44:42.487Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
